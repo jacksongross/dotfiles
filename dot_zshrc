@@ -1,0 +1,17 @@
+PATH="/usr/local/bin:$(getconf PATH)"
+
+export PATH="/usr/local/sbin:$PATH"
+
+CONFIGS=$HOME/zshrc
+
+# Load critical script first
+source $CONFIGS/init.sh
+
+FILES_STR=$(fd --glob '*.sh' --exclude 'init.sh' $CONFIGS)
+
+FILES=($(echo $FILES_STR | tr '\n' ' '))
+
+# Load the partials
+for FILE in $FILES; do
+  source $FILE
+done

@@ -1,0 +1,12 @@
+[user]
+        name = Jackson Gross
+        email = jackson.gross@gmail.com
+        signingkey = ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQDux0DJxc2NPAoLyH65dWgsnCpUMq09cPTuJZb0pllhnDRvaAkhqGTAMfHvJcb0eB7eq6UizCVu6+OwH/Bb1R9sorEYdr3mhYgudIzuCj+NB0XL+BkXVFocDr69BnSqzXTWgPIyZFPST4QRU04UpJve7BqCVrw5M9KP3ToN9dXtphfzL4mpIM9jSoweNpY4QSUMDk0AXNUexbI8E2JNx//6gM9nk8E0JCybkOU+cCeKQfsSqFkYS0SBlSVkeBq3aZiU6hFMu34uFCxz/Gw65wJ5iA2ItDyTevF8NCPPjWlVGDOeMgk9Rin0dNcDixPrNcZJ8srTNP9XhW3qz3b3UxHV4UrmQoSlXIl+7OUHEvw1zR40J6pt19lFsgjGLZiqUMcUTTsrkAWygJ56PKdbv6CIrLdItT+1a28kDfd7esdvH5QaosIlTPz7WPlA84pwFyySbguxglJ2MhYBm0CS+A0u/dqLwmngbnp5/KTmNmm7EW6azAZOX1J9Glmkmesidw112Mq+5Aov+8U6iMgStZ/15mLUnV2btCPWEdZ8a/xukJPTQJrmfFgPppIY7MczA9T5hcIqnMgcqnXUZrb81CWVoc5sRp6u8q8rl1mtnY7Zaep8B41Fg/josisER6EtQDYC6+L18n8SjLeTtLU31gmyeHviJe8obdcSSnQyYIsadw==
+[core]
+        editor = code --wait
+[commit]
+        gpgsign = true
+[gpg]
+        format = ssh
+[gpg "ssh"]
+        program = /Applications/1Password.app/Contents/MacOS/op-ssh-sign
