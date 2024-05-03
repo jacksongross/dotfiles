@@ -4,19 +4,9 @@ My collection of dotfiles managed by [chezmoi](https://www.chezmoi.io/). Feel fr
 
 ## Installation
 
-First install chezmoi
+Install chezmoi and my dotfiles with a single command
 ```bash
-# for macos with Homebrew installed
-brew install chezmoi
-
-# or using curl
-sh -c "$(curl -fsLS get.chezmoi.io)"
-```
-
-Then install my dotfiles with
-
-```bash
-chezmoi init --apply https://github.com/jacksongross/dotfiles.git
+sh -c "$(curl -fsLS get.chezmoi.io)" -- init --apply jacksongross
 ```
 
 That's it! Everything should then be setup to be productive.
