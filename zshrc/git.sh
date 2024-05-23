@@ -4,6 +4,9 @@ export DISABLE_SCOPE_LOWERCASE=1
 # prune merged branches
 alias ggprune='git checkout -q $(git rev-parse --abbrev-ref HEAD) && git for-each-ref refs/heads/ "--format=%(refname:short)" | while read branch; do mergeBase=$(git merge-base $(git rev-parse --abbrev-ref HEAD) $branch) && [[ $(git cherry ${1:-master} $(git commit-tree $(git rev-parse $branch^{tree}) -p $mergeBase -m _)) == "-"* ]] && git branch -D $branch; done'
 
+# get default branch name from origin
+alias ggdefault='git symbolic-ref refs/remotes/origin/HEAD | sed "s@^refs/remotes/origin/@@"'
+
 # get parent branch
 alias ggparent='git show-branch | sed "s/].*//" | grep "\*" | grep -v "$(git rev-parse --abbrev-ref HEAD)" | head -n1 | sed "s/^.*\[//"'
 
@@ -30,5 +33,7 @@ function gglogs() {
       ;;
   esac
 
-  git log --pretty=format:"${format}" $(ggparent).. --reverse | pbcopy
+  branch_name=$(ggparent)||$(ggdefault)
+
+  git log --reverse --pretty=format:"${format}" $branch_name.. | pbcopy
 }
