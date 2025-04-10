@@ -8,5 +8,6 @@ export BUNDLE_RUBYGEMS__PKG__GITHUB__COM=$GITHUB_TOKEN
 export FIGMA_ACCESS_TOKEN="{{- onepasswordRead "op://Personal/Figma Access Token/password" }}"
 export FIGMA_TOKEN="{{- onepasswordRead "op://Personal/Figma Token/password" }}"
 export GEMFURY_TOKEN="{{- onepasswordRead "op://Engineering/Gemfury deploy token/password" }}"
+export HUGGINGFACE_TOKEN="{{- onepasswordRead "op://Personal/Huggingface personal access token/password" }}"
 export NPM_TOKEN="{{- onepasswordRead "op://Engineering/Npm Registry Private Token/password" }}"
 {{- end }}
