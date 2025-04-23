@@ -1,0 +1,11 @@
+{{- if (eq .chezmoi.os "darwin") -}}
+#!/bin/sh
+
+# setup python dependencies and autocompletions
+pipx ensurepath
+pipx install poetry
+
+mkdir ~/.oh-my-zsh/custom/plugins/poetry
+poetry completions zsh > ~/.oh-my-zsh/custom/plugins/poetry/_poetry
+
+{{ end -}}
